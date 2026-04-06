@@ -1,0 +1,31 @@
+# Large / generated data (download raw CSVs per README; regenerate cleaned with scripts)
+data/raw/**/*.csv
+data/cleaned/kickstarter_cleaned.csv
+data/cleaned/kickstarter.db
+
+# GCP key (never commit)
+gcp-key.json
+*-key.json
+*credentials*.json
+# Downloaded keys with non-*-key.json names (still never commit)
+my-map-project-*.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
