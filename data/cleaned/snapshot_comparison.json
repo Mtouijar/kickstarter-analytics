@@ -1,0 +1,13 @@
+{
+  "description": "Counts and success rates by Kaggle export after US+USD+completed filters, before dropping duplicate project ids across snapshots.",
+  "by_snapshot_year": {
+    "2016": {
+      "rows_after_filters": 229366,
+      "success_rate": 0.4175422686884717
+    },
+    "2018": {
+      "rows_after_filters": 261360,
+      "success_rate": 0.4181932966023875
+    }
+  }
+}

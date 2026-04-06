@@ -1,0 +1,122 @@
+{
+  "source": "Kickstarter Projects (Kaggle), 2016 and/or 2018 CSVs in the same archive",
+  "raw_files_used": [
+    "ks-projects-201612.csv",
+    "ks-projects-201801.csv"
+  ],
+  "cleaning_notes": {
+    "duplicates_removed": 0,
+    "scope": "country=US, currency=USD",
+    "dedupe_rule": "If a project id appears in both snapshots, keep the row from the later snapshot_year.",
+    "snapshot_summary_before_id_dedupe": {
+      "2016": {
+        "rows_after_filters": 229366,
+        "success_rate": 0.4175422686884717
+      },
+      "2018": {
+        "rows_after_filters": 261360,
+        "success_rate": 0.4181932966023875
+      }
+    },
+    "missing_after_clean": {
+      "id": 0,
+      "name": 2,
+      "category": 0,
+      "main_category": 0,
+      "currency": 0,
+      "deadline": 261360,
+      "goal": 0,
+      "launched": 0,
+      "pledged": 0,
+      "state": 0,
+      "backers": 0,
+      "country": 0,
+      "usd_pledged": 0,
+      "snapshot_year": 0,
+      "usd_goal_real": 0,
+      "usd_pledged_real": 0
+    }
+  },
+  "columns": {
+    "id": {
+      "dtype": "int64",
+      "non_null": 261360,
+      "description": "Kickstarter project ID"
+    },
+    "name": {
+      "dtype": "str",
+      "non_null": 261358,
+      "description": "Project name"
+    },
+    "category": {
+      "dtype": "str",
+      "non_null": 261360,
+      "description": "Subcategory (e.g. Video Games)"
+    },
+    "main_category": {
+      "dtype": "str",
+      "non_null": 261360,
+      "description": "Main category (e.g. Games)"
+    },
+    "currency": {
+      "dtype": "str",
+      "non_null": 261360,
+      "description": "Currency code"
+    },
+    "deadline": {
+      "dtype": "datetime64[us]",
+      "non_null": 0,
+      "description": "Campaign deadline date"
+    },
+    "goal": {
+      "dtype": "float64",
+      "non_null": 261360,
+      "description": "Funding goal in original currency"
+    },
+    "launched": {
+      "dtype": "datetime64[us]",
+      "non_null": 261360,
+      "description": "Launch date"
+    },
+    "pledged": {
+      "dtype": "float64",
+      "non_null": 261360,
+      "description": "Amount pledged in original currency"
+    },
+    "state": {
+      "dtype": "str",
+      "non_null": 261360,
+      "description": "Outcome: successful or failed (completed only)"
+    },
+    "backers": {
+      "dtype": "float64",
+      "non_null": 261360,
+      "description": "Number of backers"
+    },
+    "country": {
+      "dtype": "str",
+      "non_null": 261360,
+      "description": "Country code"
+    },
+    "usd_pledged": {
+      "dtype": "float64",
+      "non_null": 261360,
+      "description": "Pledged amount in USD (column name from Kaggle)"
+    },
+    "snapshot_year": {
+      "dtype": "int64",
+      "non_null": 261360,
+      "description": "Which Kaggle export the row came from after id deduplication"
+    },
+    "usd_goal_real": {
+      "dtype": "float64",
+      "non_null": 261360,
+      "description": "Goal in USD (aligned; for USD rows matches goal in USD)"
+    },
+    "usd_pledged_real": {
+      "dtype": "float64",
+      "non_null": 261360,
+      "description": "Pledged amount in USD (aligned; see ETL for 2016)"
+    }
+  }
+}
