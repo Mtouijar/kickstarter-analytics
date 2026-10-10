@@ -24,7 +24,7 @@ You will need **Python 3.10+** and a normal SQLite install (included with Python
    `python -m nbconvert --to notebook --execute notebooks/eda_and_prediction.ipynb --inplace`  
    to refresh outputs and the figures under `report/`.
 
-5. **Write-up:** The narrative and figures live in `report/` (see `report_template.md`).
+5. **Write-up:** The narrative and figures live in `report/` (see `report.md`).
 
 ## Google BigQuery
 
