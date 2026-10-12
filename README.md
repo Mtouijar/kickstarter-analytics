@@ -1,6 +1,23 @@
 # Predicting Crowdfunding Success: US Kickstarter Campaigns (USD)
 
-This repository is an end-to-end analytics pipeline for historical Kickstarter data: ingest and clean exports, store them locally, explore patterns, train classification models, and summarize findings in the report. The optional Google BigQuery path loads the same cleaned table into the cloud so you can run SQL there.
+This repository is an end-to-end analytics and machine learning pipeline for historical Kickstarter data: ingest and clean two Kaggle exports, store them in SQLite, explore patterns, train and evaluate classification models, and summarize findings in the report. The same cleaned table is also loaded into Google BigQuery for cloud SQL querying.
+
+**Stack:** Python, pandas, scikit-learn, SQLite, Google BigQuery, Jupyter, matplotlib
+
+## Results at a glance
+
+- **Data:** two Kaggle snapshots with different column layouts, normalized, merged and deduplicated into **261,360** US, USD-denominated campaigns with a final outcome.
+- **Models:** a logistic regression baseline and a Random Forest (100 trees), trained on funding goal, backer count and main category with a stratified 75/25 train/test split.
+- **Evaluation on the held-out test set:**
+
+| Model | Accuracy | Precision | Recall | F1 | ROC-AUC |
+| --- | --- | --- | --- | --- | --- |
+| Logistic regression (baseline) | 0.866 | 0.924 | 0.738 | 0.821 | 0.963 |
+| Random Forest | **0.922** | 0.903 | **0.911** | **0.907** | **0.973** |
+
+- **Finding:** the Random Forest improves accuracy by about 5.6 percentage points and balances precision and recall far better than the baseline. Backer count is the strongest predictor, but it is only fully known once a campaign is live, so the model is framed as historical analysis. Among signals available before launch, funding goal is the strongest.
+
+The full method, figures and limitations are in [`report/report.md`](report/report.md).
 
 ## Dataset
 
